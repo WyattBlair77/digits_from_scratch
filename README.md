@@ -9,7 +9,7 @@ Getting Started
 You'll first need to download the extended MNIST (EMNIST) dataset created by Chris Crawford, which can be found here:
 https://www.kaggle.com/crawford/emnist
 You only need to download the emnist-digits-train.csv and the emnist-digits-test.csv files. Be sure to add these files
-to the digits_from_scratch folder. The code should run from there.
+to the digits_from_scratch folder. Then go to line 10 of the python file and update the path variable so the code can find these files. The code should run from there.
 
 
 Acknowledgments
