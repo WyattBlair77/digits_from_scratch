@@ -194,3 +194,4 @@ for i in range(len(num)):
                     num[i][j][k][l] = 1 - temp
 
 plt.imshow(np.squeeze(num))
+
