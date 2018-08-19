@@ -1,8 +1,3 @@
-# This Python 3 environment comes with many helpful analytics libraries installed
-# It is defined by the kaggle/python docker image: https://github.com/kaggle/docker-python
-# For example, here's several helpful packages to load in
-
-
 # Imports
 import numpy as np  # linear algebra
 import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
@@ -10,11 +5,11 @@ from tensorflow.python import keras
 from tensorflow.python.keras.models import Sequential
 from tensorflow.image import decode_jpeg
 from tensorflow.python.keras.layers import Dense, Flatten, Conv2D, Dropout, MaxPooling2D
-# Input data files are available in the "../input/" directory.
-# For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directory
 import os
 
-print(os.listdir("/Users/wyatt_blair/Desktop/digits_from_scratch"))
+path = "/Users/wyatt_blair/Desktop/digits_from_scratch"
+
+print(os.listdir(path))
 import matplotlib.pyplot as plt
 import random
 from sklearn import ensemble
@@ -75,7 +70,7 @@ def rotate(matrix):
 
 
 # EMNIST dataset
-file = "/Users/wyatt_blair/Desktop/digits_from_scratch/emnist-digits-train.csv"
+file = path + "/emnist-digits-train.csv"
 data = np.loadtxt(file, skiprows=1, delimiter=",")
 # data = pd.read_csv(file)
 seed = 10
@@ -119,13 +114,13 @@ model.compile(loss=keras.losses.categorical_crossentropy, optimizer='adam', metr
 model.fit(x, y, batch_size=200, epochs=10, validation_split=0.4)
 
 # #Test model against other numbers
-# test_file = "../input/emnist/emnist-digits-test.csv"
+# test_file = path + "/emnist-digits-test.csv"
 # test_data = np.loadtxt(test_file, skiprows = 1, delimiter 0l_size = 4000)
 
 # model.evaluate(test_x, test_y, batch_size = 100)
 
 # Test the model with my own handwritten digits
-test_pic = "/Users/wyatt_blair/Desktop/digits_from_scratch/Numbers_v2/"
+test_pic = path + "Numbers_v2/"
 
 
 def create_test_image_paths(folder_path):
