@@ -90,24 +90,6 @@ model.add(Dense(128, activation='relu'))
 model.add(Dense(50, activation='relu'))
 model.add(Dense(num_classes, activation='softmax'))
 
-# model.add(Conv2D(filters=32, kernel_size =3, activation = 'relu', input_shape = (img_rows, img_cols, 1)))
-# model.add(Conv2D(filters=12, kernel_size =3, activation = 'relu'))
-# model.add(Conv2D(filters=12, kernel_size =3, activation = 'relu'))
-# model.add(Conv2D(filters=12, kernel_size =3, activation = 'relu'))
-# model.add(Dropout(0.5))
-# model.add(Conv2D(filters=32, kernel_size =3, activation = 'relu'))
-# model.add(Dense(50, activation = 'relu'))
-# model.add(Dropout(0.5))
-# model.add(Conv2D(filters=32, kernel_size =3, activation = 'relu'))
-# model.add(Dense(125, activation = 'relu'))
-# model.add(Dense(250, activation = 'relu'))
-
-# model.add(Conv2D(filters=12, kernel_size=3, activation = 'relu'))
-# model.add(Dropout(0.5))
-# model.add(Conv2D(filters=12, kernel_size =3, activation = 'relu'))
-# model.add(Dropout(0.5))
-
-
 model.compile(loss=keras.losses.categorical_crossentropy, optimizer='adam', metrics=['accuracy'])
 
 # Fit the model to the prepped-data
@@ -146,14 +128,6 @@ from scipy import misc
 import matplotlib.pyplot as plt
 from skimage import data
 from skimage import transform
-
-# img = misc.imread(test_pic)
-# ### Method block begin
-# img[:] = img.mean(axis=-1,keepdims=1)
-# ### Method Block ends
-# plt.figure(figsize=(10,20))
-# plt.imshow(img)
-
 
 image_size = 28
 
@@ -220,84 +194,3 @@ for i in range(len(num)):
                     num[i][j][k][l] = 1 - temp
 
 plt.imshow(np.squeeze(num))
-
-
-
-
-
-# image_size = 28
-
-# def csv_to_matrix(ind, path, image_size):
-#     file = pd.read_csv(path,delimiter = ",")
-#     image_info = file.ix[ind]
-#     image = np.zeros((image_size, image_size))
-#     for i in range(0, image_size):
-#         for j in range(0, image_size):
-#             image[i][j] = image_info[i*image_size+j+1]
-#     return image
-
-
-
-# images = np.zeros((num_samples, image_size*image_size))
-# for i in range(0, num_samples):
-#     images[i] = matrix_to_tensor(i, "../input/emnist-mnist-train.csv", image_size)
-
-# data = pd.read_csv("../input/emnist-mnist-train.csv")
-# num_samples = len(data)
-
-# sample_index =random.sample(range(num_samples), int(num_samples/5))
-# valid_index=[i for i in range(len(data)) if i not in sample_index]
-
-# labels = data.ix[:,0].as_matrix()
-
-# sample_images=[x[i] for i in sample_index]
-# valid_images=[x[i] for i in valid_index]
-
-# image_array = np.zeros((image_size, image_size))
-
-
-
-
-
-
-
-
-
-# num_5 = Image.open(test_pic)
-# num_5 = num_5.resize((300, 300), resample = 0)
-# save_dir = "5-reshape.jpeg"
-# num_5.save(save_dir)
-
-
-
-
-
-# num = Image.open(test_pic)
-# pers_data_temp = list(num.getdata())
-# pers_data = []
-# for i in pers_data_temp:
-#     total = i[0] + i[1] + i[2]
-#     average = int(total / 3)
-#     pers_data.append(average)
-# pers_data = pd.DataFrame(pers_data)
-# pers_data = pers_data.melt()
-# print(pers_data)
-# pers_data = pers_data.reshape(1, img_rows, img_cols, 1)
-
-
-
-# f = open("../input/emnist-mnist-train.csv")
-# a = f.readlines()
-# f.close()
-# f = plt.figure(figsize=(15,15))
-# count =1
-# for line in a:
-#     linebits = line.split(',')
-#     imarray = np.asfarray(linebits[1:]).reshape((28,28))
-#     rotate(imarray)
-#     plt.subplot(5,5,count)
-#     plt.subplots_adjust(hspace=0.5)
-#     count+=1
-#     plt.title("Label is " + linebits[0])
-#     plt.imshow(imarray, cmap='Greys', interpolation = 'None', origin = "lower")
-#     pass
