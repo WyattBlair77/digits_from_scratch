@@ -33,24 +33,6 @@ def data_prep(raw, train_size, val_size):
     return out_x, out_y
 
 
-# def swap(matrix, r1, c1, r2, c2):
-#     matrix[r1][c1], matrix[r2][c2] = matrix[r2][c2], matrix[r1][c1]
-
-# def transpose(matrix):
-#     for row in range(len(matrix)):
-#         for col in range(row):
-#             swap(matrix, row, col, col, row)
-
-# def flip_vertical(matrix):
-#     size = len(matrix)
-#     for row in range(size // 2):
-#         for col in range(size):
-#             swap(matrix, row, col, size - row - 1, col)
-
-# def rotate(matrix):
-#     transpose(matrix)
-#     flip_vertical(matrix)
-
 def rotate(matrix):
     if matrix is None or len(matrix) < 1:
         return
