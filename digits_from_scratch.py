@@ -84,7 +84,7 @@ model.fit(x, y, batch_size=200, epochs=10, validation_split=0.4)
 # model.evaluate(test_x, test_y, batch_size = 100)
 
 # Test the model with my own handwritten digits
-test_pic = path + "Numbers_v2/"
+test_pic = path + "/Numbers_v2/"
 
 
 def create_test_image_paths(folder_path):
